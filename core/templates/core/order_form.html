@@ -1,0 +1,12 @@
+<!-- Simple Bootstrap styled form -->
+{% extends 'core/base.html' %}
+{% block content %}
+<h2 style="text-align:center; padding:20px">Place Your Order</h2>
+<div style="max-width:700px; margin:auto">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Send Order</button>
+  </form>
+</div>
+{% endblock %}

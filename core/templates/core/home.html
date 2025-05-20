@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <h2><strong>Welcome to SMART AGROTECH</strong></h2>
+    <h5>Your trusted partner in modern agriculture machinery and services.</h5><br>
+    <a href="{% url 'products' %}" class="btn"><strong>Explore Our Products</strong></a>
+</section>
+
+<section class="who-we-are">
+  <div class="who-content">
+    <div class="who-text">
+      <h2>Who We Are</h2>
+      <p>
+        SMART AGRO TECH is a passionate team dedicated to modernizing agriculture across Bangladesh. Based in Khulna, we sell, distribute, and supply advanced farming machinery that boosts productivity, minimizes labor, and supports sustainable farming practices.
+      </p>
+      <p>
+        From irrigation systems and sowing tools to harvesting equipment and expert field support — we empower farmers with the right tools to grow more efficiently and profitably.
+      </p>
+      <p>
+        Our vision is to become the most trusted agri-tech partner in the region, driving innovation and helping build a better future for rural communities.
+      </p>
+    </div>
+    <div class="who-image">
+      <img src="{% static 'images/farming-bg_2.png' %}" alt="About Smart Agro Tech">
+    </div>
+  </div>
+</section>
+
+
+<section class="features py-5 bg-light text-center" id="features">
+  <div class="container">
+    <h2 class="mb-4" data-aos="fade-up">Our Key Features</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="feature-icon mb-3 text-success">
+              <i class="fas fa-tint fa-2x"></i>
+            </div>
+            <h4 class="card-title">Irrigation Tools</h4>
+            <p class="card-text">Efficient water usage systems designed to increase crop yield and save resources.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="feature-icon mb-3 text-warning">
+              <i class="fas fa-tractor fa-2x"></i>
+            </div>
+            <h4 class="card-title">Harvesting Equipment</h4>
+            <p class="card-text">Advanced machinery for faster, safer, and more productive harvesting operations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+            <div class="feature-icon mb-3 text-primary">
+              <i class="fas fa-headset fa-2x"></i>
+            </div>
+            <h4 class="card-title">Technical Support</h4>
+            <p class="card-text">Our expert team offers reliable advice and responsive after-sales services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="about-brief text-center py-5 bg-light" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="200" data-aos-easing="ease-in-out">
+    <div class="container">
+        <h2 class="section-title mb-4" style="text-align: center;">Why Choose SMART AGROTECH?</h2>
+        <p class="lead mb-4" style="text-align: center;">Empowering modern farming with reliable machinery and trusted support.</p>
+        <ul class="list-unstyled mx-auto about-list">
+            <li><i class="fas fa-cogs me-2 text-success"></i> &nbsp High-Quality Agricultural Machinery</li>
+            <li><i class="fas fa-tags me-2 text-success"></i> &nbsp Competitive & Affordable Pricing</li>
+            <li><i class="fas fa-users me-2 text-success"></i> &nbsp Trusted by Hundreds of Farmers in Khulna</li>
+            <li><i class="fas fa-headset me-2 text-success"></i> &nbsp Expert Technical Support Team</li>
+        </ul>
+    </div>
+</section>
+
+<section class="find-us">
+    <h2>Find Us</h2>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d546.7557398907655!2d89.52816923978483!3d22.798034278564767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1746947551810!5m2!1sen!2sbd"
+            width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+
+{% endblock %}

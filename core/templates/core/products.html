@@ -1,0 +1,81 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+
+<h2 style="text-align: center;" class="py-5">OUR PRODUCTS</h2>
+
+<div class="container my-5">
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+      <div class="product-card shadow-sm" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}">
+        <img src="{{ product.image.url }}" class="img-fluid product-img" alt="{{ product.name }}">
+        <div class="product-body p-3">
+          <h5>{{ product.name }}</h5>
+          <ul class="product-features">
+            {% if product.feature1 %}<li>{{ product.feature1 }}</li>{% endif %}
+            {% if product.feature2 %}<li>{{ product.feature2 }}</li>{% endif %}
+            {% if product.feature3 %}<li>{{ product.feature3 }}</li>{% endif %}
+          </ul>
+          <p class="product-price">৳ {{ product.price }}</p>
+          <a class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#productModal{{ product.id }}" onclick="event.stopPropagation();">See Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="productModal{{ product.id }}" tabindex="-1" aria-labelledby="productModalLabel{{ product.id }}" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="productModalLabel{{ product.id }}">{{ product.name }} - Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="easyzoom easyzoom--overlay">
+                  <a href="{{ product.image.url }}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h4>Specifications</h4>
+                <div class="row">
+                  <table class="table table-bordered table-striped">
+                    <tbody>
+                      {% for i in "1,2,3,4,5,6"|cut:"," %}
+                        {% with label_key="spec_label"|add:i value_key="spec_value"|add:i %}
+                          {% with label=product|get_attr:label_key value=product|get_attr:value_key %}
+                            {% if label and value %}
+                            <tr>
+                              <th>{{ label }}</th>
+                              <td>{{ value }}</td>
+                            </tr>
+                            {% endif %}
+                          {% endwith %}
+                        {% endwith %}
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  {% if product.description %}
+                    <div class="mt-4">
+                      <h5>Product Description</h5>
+                      <p>{{ product.description }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+                <a href="{% url 'order' %}" class="btn btn-success mt-3">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
