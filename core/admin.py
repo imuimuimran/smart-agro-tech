@@ -6,9 +6,9 @@ from .models import GalleryImage
 from .models import Order
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price')
+    list_display = ('name',)
     fields = (
-        'name', 'image', 'price',
+        'name', 'image',
         'feature1', 'feature2', 'feature3',
         'spec_label1', 'spec_value1',
         'spec_label2', 'spec_value2',

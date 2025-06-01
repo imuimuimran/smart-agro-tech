@@ -3,7 +3,6 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='product_images/')
-    price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField(blank=True)
     
     # Add feature points
@@ -69,16 +68,6 @@ class Order(models.Model):
     name = models.CharField(max_length=100)
     mobile = models.CharField(max_length=14)
     email = models.EmailField(blank=True)
-    address_village = models.CharField(max_length=100)
-    address_union = models.CharField(max_length=100)
-    address_post = models.CharField(max_length=100)
-    address_thana = models.CharField(max_length=100)
-    address_district = models.CharField(max_length=100)
-    delivery_village = models.CharField(max_length=100)
-    delivery_union = models.CharField(max_length=100)
-    delivery_post = models.CharField(max_length=100)
-    delivery_thana = models.CharField(max_length=100)
-    delivery_district = models.CharField(max_length=100)
     submitted_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

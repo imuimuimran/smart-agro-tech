@@ -28,14 +28,4 @@ class OrderForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'required': True}),
             'mobile': forms.TextInput(attrs={'required': True}),
-            'address_village': forms.TextInput(attrs={'required': True}),
-            'address_union': forms.TextInput(attrs={'required': True}),
-            'address_post': forms.TextInput(attrs={'required': True}),
-            'address_thana': forms.TextInput(attrs={'required': True}),
-            'address_district': forms.TextInput(attrs={'required': True}),
-            'delivery_village': forms.TextInput(attrs={'required': True}),
-            'delivery_union': forms.TextInput(attrs={'required': True}),
-            'delivery_post': forms.TextInput(attrs={'required': True}),
-            'delivery_thana': forms.TextInput(attrs={'required': True}),
-            'delivery_district': forms.TextInput(attrs={'required': True}),
         }
