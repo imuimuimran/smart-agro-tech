@@ -430,6 +430,7 @@ footer {
 .contact-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 20px;
 }
 .contact-form, .contact-info {
@@ -639,6 +640,19 @@ button {
 
     .navbar {
         position: relative;
+    }
+    .contact-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+    }
+
+    .map-container iframe {
+        height: 300px;
     }
 }
 
