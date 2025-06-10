@@ -160,4 +160,5 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_QUERYSTRING_AUTH = False  # So media URLs don't expire
-MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/'
+AWS_S3_CUSTOM_DOMAIN = 'smartagrotechkhulna-media.s3.ap-southeast-1.amazonaws.com'
+MEDIA_URL = 'https://smartagrotechkhulna-media.s3.ap-southeast-1.amazonaws.com/'
