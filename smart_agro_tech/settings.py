@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -148,3 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # For development: print emails to the terminal
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+if not DEBUG:
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
