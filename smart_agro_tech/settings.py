@@ -148,17 +148,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # For development: print emails to the terminal
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-
-# Media files with S3
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-AWS_ACCESS_KEY_ID = 'AKIAY7OYMCNNVJWGZEBL'
-AWS_SECRET_ACCESS_KEY = 'xQsEG3vinxAHFioWJVexdPI3as0Z0079WtNiA9nL'
-AWS_STORAGE_BUCKET_NAME = 'smartagrotechkhulna-media'
-AWS_S3_REGION_NAME = 'ap-southeast-1'  # e.g., 'ap-south-1' or 'us-east-1'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_S3_SIGNATURE_VERSION = 's3v4'
-AWS_QUERYSTRING_AUTH = False  # So media URLs don't expire
-AWS_S3_CUSTOM_DOMAIN = 'smartagrotechkhulna-media.s3.ap-southeast-1.amazonaws.com'
-MEDIA_URL = 'https://smartagrotechkhulna-media.s3.ap-southeast-1.amazonaws.com/'
