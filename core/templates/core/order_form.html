@@ -1,12 +1,34 @@
-<!-- Simple Bootstrap styled form -->
 {% extends 'core/base.html' %}
 {% block content %}
-<h2 style="text-align:center; padding:20px">Place Your Order</h2>
-<div style="max-width:700px; margin:auto">
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-success">Send Order</button>
-  </form>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card shadow-lg">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="mb-0">Place Your Order</h4>
+        </div>
+        <div class="card-body">
+          <form method="post" novalidate>
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="mb-3">
+                <label for="{{ field.id_for_label }}" class="form-label">
+                  {{ field.label }}
+                  {% if field.field.required %}<span class="text-danger">*</span>{% endif %}
+                </label>
+                {{ field }}
+                {% if field.errors %}
+                  <div class="text-danger small">{{ field.errors }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success w-100">Send Order</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}

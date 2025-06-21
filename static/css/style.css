@@ -23,6 +23,7 @@ body {
 /* Top Bar */
 .topbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     background: #f0f0f0;
@@ -30,6 +31,12 @@ body {
     height: 35px;
     font-size: 14px;
     color: #333;
+    
+}
+.top-left,
+.top-center {
+  padding: 5px 10px;
+  color: #000;
 }
 .top-left, .top-center, .top-right {
     flex: 1;
@@ -292,8 +299,13 @@ body {
 }
 
 .who-image {
+    /* flex: 1 1 400px;
+    text-align: center; */
     flex: 1 1 400px;
-    text-align: center;
+    display: flex;
+    align-items: center;   /* Vertically center */
+    justify-content: center; /* Horizontally center if needed */
+    padding: 20px 0;
 }
 
 .who-image img {
@@ -301,6 +313,34 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+.video-responsive {
+  /* position: relative;
+  padding-bottom: 56.25%; 16:9 aspect ratio 
+  height: 0;
+  overflow: hidden; */
+  position: relative;
+  width: 100%;
+  max-width: 560px;      /* Optional: limit max width */
+  aspect-ratio: 16 / 9;  /* Modern way to preserve ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.video-responsive iframe {
+  /* position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%; */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  top: 0;
+  left: 0;
+}
+
 
 /* Scroll animation */
 @keyframes fadeInUp {
@@ -658,8 +698,14 @@ button {
     .nav-right {
         display: none;
     }
+    .topbar {
+        height: 70px;
+    }
+    .top-left,
     .top-center {
-        margin-left: 5px;
+        display: block;
+        width: 100%;
+        text-align: left;
     }
 }
 
